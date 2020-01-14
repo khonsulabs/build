@@ -7,9 +7,12 @@ RUN apt-get update \
         curl \
         libssl-dev \
         pkg-config \
+        python3-pip \
         wget \
         zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install awscli --noinput
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 
