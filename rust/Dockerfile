@@ -12,7 +12,7 @@ RUN apt-get update \
         zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install awscli --noinput
+RUN pip3 install awscli
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 
