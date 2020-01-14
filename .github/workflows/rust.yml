@@ -1,10 +1,9 @@
-name: CI
+name: Rust Docker Build Environment
 
 on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
