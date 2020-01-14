@@ -19,8 +19,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         uses: elgohr/Publish-Docker-Github-Action@2.9
         with:
-          name: khonsulabs/build/rust
+          name: khonsulabs/build-rust
           dockerfile: rust/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          registry: docker.pkg.github.com
