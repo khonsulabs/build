@@ -16,7 +16,7 @@ RUN pip3 install awscli
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 
-ENV PATH="/root/.cargo/bin/:${PATH}"
+ENV PATH="/root/.cargo/bin/:${PATH}" CARGO_HOME="/root/.cargo" RUSTUP_HOME="/root/.rustup" 
 
 RUN rustup install nightly && rustup default stable && rustup show
 
