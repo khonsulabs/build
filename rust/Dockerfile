@@ -3,9 +3,9 @@ FROM ubuntu:18.04
 RUN apt-get update \
     && apt-get upgrade -yqq \
     && apt-get install -yqq \
-        cmake 
-        libssl-dev 
-        pkg-config 
+        cmake \
+        libssl-dev \
+        pkg-config \
         zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
