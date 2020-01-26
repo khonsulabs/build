@@ -12,6 +12,8 @@ RUN apt-get update \
         zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
+RUN sudo snap install node --classic --channel=12 && sudo npm install -g sass
+
 RUN pip3 install awscli
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
@@ -20,4 +22,4 @@ ENV PATH="/root/.cargo/bin/:${PATH}" CARGO_HOME="/root/.cargo" RUSTUP_HOME="/roo
 
 RUN rustup install nightly && rustup default stable && rustup show
 
-RUN cargo install cargo-tarpaulin
+RUN cargo install cargo-tarpaulin && cargo install cargo-web
