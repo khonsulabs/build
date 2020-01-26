@@ -12,7 +12,7 @@ RUN apt-get update \
         zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN sudo snap install node --classic --channel=12 && sudo npm install -g sass
+RUN snap install node --classic --channel=12 && npm install -g sass
 
 RUN pip3 install awscli
 
