@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
 
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get update \
     && apt-get upgrade -yqq \
     && apt-get install -yqq \
@@ -10,10 +11,8 @@ RUN apt-get update \
         python3-pip \
         wget \
         zlib1g-dev \
-        snapd \
+        nodejs \
     && rm -rf /var/lib/apt/lists/*
-
-RUN snap install node --classic --channel=12 && npm install -g sass
 
 RUN pip3 install awscli
 
