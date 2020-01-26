@@ -1,6 +1,5 @@
 FROM ubuntu:18.04
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get update \
     && apt-get upgrade -yqq \
     && apt-get install -yqq \
@@ -10,8 +9,11 @@ RUN apt-get update \
         pkg-config \
         python3-pip \
         wget \
-        zlib1g-dev \
-        nodejs \
+        zlib1g-dev\
+    && rm -rf /var/lib/apt/lists/*
+
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+    && apt-get install -yqq nodejs \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install awscli
