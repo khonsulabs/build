@@ -10,6 +10,7 @@ RUN apt-get update \
         python3-pip \
         wget \
         zlib1g-dev \
+        snapd \
     && rm -rf /var/lib/apt/lists/*
 
 RUN snap install node --classic --channel=12 && npm install -g sass
