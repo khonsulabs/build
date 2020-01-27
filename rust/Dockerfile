@@ -14,6 +14,7 @@ RUN apt-get update \
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt-get install -yqq nodejs \
+    && npm install -g sass \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install awscli
