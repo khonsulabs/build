@@ -9,7 +9,8 @@ RUN apt-get update \
         pkg-config \
         python3-pip \
         wget \
-        zlib1g-dev\
+        zlib1g-dev \
+        uuid-runtime \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
