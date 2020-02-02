@@ -11,6 +11,7 @@ RUN apt-get update \
         wget \
         zlib1g-dev \
         uuid-runtime \
+        openssh-client \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
