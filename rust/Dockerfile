@@ -22,6 +22,7 @@ RUN apt-get update \
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt-get install -yqq nodejs \
     && npm install -g sass \
+    && npm install -g rollup \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install awscli
@@ -32,4 +33,4 @@ ENV PATH="/root/.cargo/bin/:${PATH}" CARGO_HOME="/root/.cargo" RUSTUP_HOME="/roo
 
 RUN rustup install nightly && rustup default stable && rustup show
 
-RUN cargo install cargo-tarpaulin && cargo install cargo-web && cargo install cargo-make
+RUN cargo install cargo-tarpaulin && cargo install wasm-pack && cargo install cargo-make
