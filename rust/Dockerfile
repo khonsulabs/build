@@ -32,4 +32,4 @@ ENV PATH="/root/.cargo/bin/:${PATH}" CARGO_HOME="/root/.cargo" RUSTUP_HOME="/roo
 
 RUN rustup install nightly && rustup default stable && rustup show
 
-RUN cargo install cargo-tarpaulin && cargo install cargo-web
+RUN cargo install cargo-tarpaulin && cargo install cargo-web && cargo install cargo-make
