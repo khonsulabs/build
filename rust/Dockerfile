@@ -36,6 +36,6 @@ RUN rustup install nightly && rustup default stable && rustup show
 RUN cargo install cargo-tarpaulin \
     && cargo install wasm-pack \
     && cargo install cargo-make \
-    && cargo install sscache
+    && cargo install sccache
 
-ENV RUSTC_WRAPPER="sscache cargo build"
+ENV RUSTC_WRAPPER="sccache cargo build"
