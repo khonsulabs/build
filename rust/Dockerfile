@@ -38,4 +38,4 @@ RUN cargo install cargo-tarpaulin \
     && cargo install cargo-make \
     && cargo install sscache
 
-ENV RUSTC_WRAPPER=sscache cargo build
+ENV RUSTC_WRAPPER="sscache cargo build"
