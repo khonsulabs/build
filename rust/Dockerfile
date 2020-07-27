@@ -17,6 +17,7 @@ RUN apt-get update \
         libclang-dev \
         xorg \
         xorg-dev \
+        zip \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
@@ -33,7 +34,7 @@ ENV PATH="/root/.cargo/bin/:${PATH}" CARGO_HOME="/root/.cargo" RUSTUP_HOME="/roo
 
 RUN rustup install nightly && rustup default stable && rustup show
 
-RUN cargo install cargo-tarpaulin \
+RUN cargo install grcov \
     && cargo install wasm-pack \
     && cargo install cargo-make \
     && cargo install sccache
