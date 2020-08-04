@@ -17,6 +17,7 @@ RUN apt-get update \
         libclang-dev \
         xorg \
         xorg-dev \
+        git-core \
         zip \
     && rm -rf /var/lib/apt/lists/*
 
