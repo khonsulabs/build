@@ -19,6 +19,7 @@ RUN apt-get update \
         xorg-dev \
         git-core \
         zip \
+        libxcb-render-util0-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
