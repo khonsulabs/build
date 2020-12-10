@@ -40,7 +40,4 @@ RUN rustup install nightly && rustup default stable && rustup show
 
 RUN cargo install grcov \
     && cargo install wasm-pack \
-    && cargo install cargo-make \
-    && cargo install sccache
-
-ENV RUSTC_WRAPPER="/root/.cargo/bin/sccache"
+    && cargo install cargo-make 
