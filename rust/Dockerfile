@@ -32,7 +32,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
 
 RUN pip3 install awscli
 
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+RUN curl https://sh.rustup.rs -sSf | sh -s -- --profile minimal -y
 
 ENV PATH="/root/.cargo/bin/:${PATH}" CARGO_HOME="/root/.cargo" RUSTUP_HOME="/root/.rustup" 
 
