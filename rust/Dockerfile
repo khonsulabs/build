@@ -32,12 +32,17 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
 
 RUN pip3 install awscli
 
+RUN wget https://github.com/WebAssembly/binaryen/archive/version_99.tar.gz && \
+    mkdir /root/binaryen && \
+    tar -xzf version_99.tar.gz -C /root/binaryen --strip-components 1 && \
+    cd /root/binaryen && cmake . && make
+
 RUN curl https://sh.rustup.rs -sSf | sh -s -- --profile minimal -y
 
-ENV PATH="/root/.cargo/bin/:${PATH}" CARGO_HOME="/root/.cargo" RUSTUP_HOME="/root/.rustup" 
+ENV PATH="/root/.cargo/bin/:/root/binaryen/bin:${PATH}" CARGO_HOME="/root/.cargo" RUSTUP_HOME="/root/.rustup" 
 
 RUN rustup install nightly && rustup default stable && rustup show
 
 RUN cargo install grcov \
-    && cargo install wasm-pack \
+    && cargo install wasm-bindgen-cli \
     && cargo install cargo-make 
